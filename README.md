@@ -48,5 +48,3 @@ learning_log/
 └── accounts/          # вход, выход, регистрация
 ```
 
-Перед деплоем на сервер в `ll_project/settings.py` замените `SECRET_KEY`,
-поставьте `DEBUG = False` и заполните `ALLOWED_HOSTS`.
