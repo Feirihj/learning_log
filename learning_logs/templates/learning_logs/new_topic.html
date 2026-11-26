@@ -1,0 +1,14 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+  <h1>Новая тема</h1>
+{% endblock page_header %}
+
+{% block content %}
+  <form method="post" action="{% url 'learning_logs:new_topic' %}">
+    {% csrf_token %}
+    {% include "learning_logs/_form.html" %}
+    <button type="submit" class="btn btn-primary">Добавить тему</button>
+    <a class="btn btn-outline-secondary" href="{% url 'learning_logs:topics' %}">Отмена</a>
+  </form>
+{% endblock content %}

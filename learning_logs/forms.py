@@ -1,0 +1,19 @@
+from django import forms
+
+from .models import Entry, Topic
+
+
+class TopicForm(forms.ModelForm):
+    class Meta:
+        model = Topic
+        fields = ["text"]
+        labels = {"text": "Название темы"}
+        widgets = {"text": forms.TextInput(attrs={"class": "form-control"})}
+
+
+class EntryForm(forms.ModelForm):
+    class Meta:
+        model = Entry
+        fields = ["text"]
+        labels = {"text": "Запись"}
+        widgets = {"text": forms.Textarea(attrs={"class": "form-control", "rows": 8})}
